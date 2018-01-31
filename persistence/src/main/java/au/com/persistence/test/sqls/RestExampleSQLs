@@ -1,0 +1,39 @@
+create database RestExample;
+# To grant privileges if you not using root
+#grant all privileges on rapidminer_server.* to rmUser@localhost identified by 'pswd';
+
+
+CREATE TABLE user
+(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    login VARCHAR(100),
+    password VARCHAR(100)
+);
+CREATE UNIQUE INDEX user_id_uindex ON user (id);
+
+
+CREATE TABLE `user_details` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `fullName` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_details_id_uindex` (`id`),
+  KEY `fk_to_user` (`user_id`),
+  CONSTRAINT `fk_to_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `user_security` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `account_state` varchar(10) DEFAULT NULL,
+  `reason` int(11) DEFAULT NULL,
+  `last_access` datetime DEFAULT NULL,
+  `success_trys` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_security_id_uindex` (`id`),
+  KEY `fk_to_user2` (`user_id`),
+  CONSTRAINT `fk_to_user2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

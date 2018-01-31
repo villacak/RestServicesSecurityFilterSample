@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="NewPersistenceUnit" transaction-type="RESOURCE_LOCAL">
+        <class>au.com.persistence.test.entities.user.UserEntity</class>
+        <class>au.com.persistence.test.entities.user.UserDetailsEntity</class>
+        <class>au.com.persistence.test.entities.user.UserSecurityEntity</class>
+        <class>au.com.persistence.test.entities.user.QuestionsEntity</class>
+        <class>au.com.persistence.test.entities.user.AnswersEntity</class>
+
+        <!-- For Oracle -->
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:klaus@//52.63.214.126:1521/ORCL"/>
+            <property name="javax.persistence.jdbc.user" value="klaus"/>
+            <property name="javax.persistence.jdbc.password" value="password"/>
+        </properties>
+    </persistence-unit>
+</persistence>
