@@ -27,10 +27,10 @@ public class ForgotPassword {
      * @return
      */
     public Response sendEmail(final String emailTo) {
-        final String FROM = "<senderEmail>";
-        final String FROM_DESCRIPTION_NAME = "Some Email";
+        final String FROM = "<senderEmail>"; // Your email
+        final String FROM_DESCRIPTION_NAME = "Some Email"; // Need to ask to Aruna the user and password.
         final String STANDARD_PASSWORD_FOR_THE_APPLICATION = "<senderPassword>";
-        final String HOST = "<serverName>";
+        final String HOST = "<serverName>"; // mail.archtis.com
         final String PORT = "25";
         final String SMTP_HOST = "mail.smtp.host";
         final String SMTP_PORT = "mail.smtp.port";

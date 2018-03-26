@@ -1,6 +1,10 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Maven template
 target/
+buildFinal/target/
+persistence/target/
+login/target/
+
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
